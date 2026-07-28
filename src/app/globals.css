@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    border-color: rgba(212, 175, 55, 0.08);
+  }
+  body {
+    background-color: #080b14;
+    color: #f0f0f0;
+    overflow-x: hidden;
+  }
+}
+
+/* True Trader gold scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0e1a;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.35);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.65);
+}
+
+/* Gold shimmer utility used in various headings */
+.gold-text {
+  background: linear-gradient(90deg, #f0d060 0%, #d4af37 45%, #c8921a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gold glow pulse for live badges */
+@keyframes gold-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 6px rgba(212, 175, 55, 0.5); }
+  50%       { opacity: 0.75; box-shadow: 0 0 14px rgba(212, 175, 55, 0.9); }
+}
+.gold-pulse {
+  animation: gold-pulse 2s ease-in-out infinite;
+}
